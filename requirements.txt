@@ -1,1 +1,2 @@
 libunwind,https://github.com/libunwind/libunwind/releases/download/v1.2.1/libunwind-1.2.1.tar.gz --cmake autotools
+libnpth,https://gnupg.org/ftp/gcrypt/npth/npth-1.6.tar.bz2 --cmake autotools

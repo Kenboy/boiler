@@ -2,7 +2,7 @@ project(boiler C)
 
 include(UtilityFunctions)
 
-find_package(Unwind)
+find_package(Npth)
 
 CreateSharedLibrary(boiler
     DIRS
@@ -20,7 +20,7 @@ CreateSharedLibrary(boiler
             $<$<CONFIG:Debug>:BUILD_DEBUG>
             $<$<NOT:$<CONFIG:Debug>>:BUILD_FINAL>
     LINK
-        ${Unwind_LIBRARIES}
+        ${Npth_LIBRARIES}
     PROPERTIES
         FOLDER lib
 )
