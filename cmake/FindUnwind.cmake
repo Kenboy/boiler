@@ -1,8 +1,8 @@
 # - Try to find unwind
 # Once done, this will define
 #
-#  Unwind_FOUND - system has Unwind
-#  Unwind_INCLUDE_DIRS - the Unwind include directories
+#  Unwind_FOUND - system has unwind
+#  Unwind_INCLUDE_DIRS - the unwind include directories
 #  Unwind_LIBRARIES - link these to use unwind
 #
 # See documentation on how to write CMake scripts at

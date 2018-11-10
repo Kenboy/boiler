@@ -1,8 +1,15 @@
+#--------------------------------------------------------------------
+# Project
+#--------------------------------------------------------------------
 project(boiler C)
 
+#--------------------------------------------------------------------
+# Include
+#--------------------------------------------------------------------
 include(UtilityFunctions)
 
-find_package(Npth)
+find_package(Unwind)
+find_package(FFI)
 
 CreateSharedLibrary(boiler
     DIRS
@@ -10,8 +17,9 @@ CreateSharedLibrary(boiler
     INCLUDES
         PUBLIC
             "${boiler_SOURCE_DIR}/include"
-        PRIVATE
-            ${Unwind_INCLUDE_DIR}
+    PRIVATE
+        ${Unwind_INCLUDE_DIR}
+        ${FFI_INCLUDE_DIR}
     DEFINES
         PUBLIC
             $<$<BOOL:${LINUX}>:PLATFORM_LINUX>
@@ -20,7 +28,8 @@ CreateSharedLibrary(boiler
             $<$<CONFIG:Debug>:BUILD_DEBUG>
             $<$<NOT:$<CONFIG:Debug>>:BUILD_FINAL>
     LINK
-        ${Npth_LIBRARIES}
+        ${Unwind_LIBRARIES}
+        ${FFI_LIBRARIES}
     PROPERTIES
         FOLDER lib
 )
