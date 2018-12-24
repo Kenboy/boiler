@@ -14,7 +14,7 @@ CreateLibrary(event
     INCLUDES
         PUBLIC
             "${event_SOURCE_DIR}/include"
-    PRIVATE
+        PRIVATE
     DEFINES
         PUBLIC
             $<$<BOOL:${LINUX}>:PLATFORM_LINUX>

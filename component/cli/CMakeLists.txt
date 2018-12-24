@@ -14,7 +14,7 @@ CreateLibrary(cli
     INCLUDES
         PUBLIC
             "${cli_SOURCE_DIR}/include"
-    PRIVATE
+        PRIVATE
     DEFINES
         PUBLIC
             $<$<BOOL:${LINUX}>:PLATFORM_LINUX>
