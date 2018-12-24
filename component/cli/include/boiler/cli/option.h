@@ -4,7 +4,9 @@
 extern "C" {
 #endif
 
+struct boiler_cli_option {
 
+};
 
 #ifdef __cplusplus
 }

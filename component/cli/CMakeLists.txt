@@ -1,25 +1,20 @@
 #--------------------------------------------------------------------
 # Project
 #--------------------------------------------------------------------
-project(boiler C)
+project(cli C)
 
 #--------------------------------------------------------------------
 # Include
 #--------------------------------------------------------------------
 include(UtilityFunctions)
 
-find_package(Unwind)
-find_package(FFI)
-
-CreateSharedLibrary(boiler
+CreateLibrary(cli
     DIRS
-        "${boiler_SOURCE_DIR}/src"
+        "${cli_SOURCE_DIR}/src/**"
     INCLUDES
         PUBLIC
-            "${boiler_SOURCE_DIR}/include"
+            "${cli_SOURCE_DIR}/include"
     PRIVATE
-        ${Unwind_INCLUDE_DIR}
-        ${FFI_INCLUDE_DIR}
     DEFINES
         PUBLIC
             $<$<BOOL:${LINUX}>:PLATFORM_LINUX>
@@ -28,8 +23,6 @@ CreateSharedLibrary(boiler
             $<$<CONFIG:Debug>:BUILD_DEBUG>
             $<$<NOT:$<CONFIG:Debug>>:BUILD_FINAL>
     LINK
-        ${Unwind_LIBRARIES}
-        ${FFI_LIBRARIES}
     PROPERTIES
         FOLDER lib
 )

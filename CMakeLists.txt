@@ -21,4 +21,5 @@ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/lib
 #--------------------------------------------------------------------
 # Add subdirectories
 #--------------------------------------------------------------------
-add_subdirectory(source)
+add_subdirectory(component)
+add_subdirectory(launcher)
